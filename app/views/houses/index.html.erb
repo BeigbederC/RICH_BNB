@@ -1,0 +1,10 @@
+index.html.erb
+<%= link_to "Add a house", new_house_path, class: "btn btn-primary" %>
+
+<% @houses.each do |house| %>
+  <%= link_to house.name, house_path(house) %>
+  <%= link_to "more details", house_path(house[:id]) %>
+  <%= link_to "Delete", house_path(house),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
