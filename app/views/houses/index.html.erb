@@ -1,10 +1,36 @@
 <%= link_to "Add a house", new_house_path, class: "btn btn-primary" %>
 
-<% @houses.each do |house| %>
-  <%= link_to house.name, house_path(house) %>
-  <%= image_tag house.house_picture %>
+<div class="container">
+  <div class="row">
 
-  <%= link_to "Delete", house_path(house),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-<% end %>
+    <% @houses.each do |house| %>
+      <div class="col-md-6">
+        <%= link_to house_path(house) do %>
+          <div class="houses-card">
+            <div class="card-picture" style="background: url(<%= house.house_picture %>) no-repeat center; background-size: cover;">
+              <h2><%= house.name %></h2>
+            </div>
+            <div class="card-content">
+              <div class="description">
+                <p><%= house.description %></p>
+              </div>
+              <div class="infos-house">
+                <p><%= house.address %></p>
+                <p><%= house.price_per_night %></p>
+              </div>
+              <div class="delete margin-right">
+        <% end %>
+                <h4 class="text-right">
+                  <%= link_to "Delete", house_path(house), method: :delete, data: {confirm: "Are you sure?" }%>
+
+                </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
