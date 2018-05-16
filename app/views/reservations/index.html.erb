@@ -1,1 +1,13 @@
-index.html.erb
+<h1>My list of reservations</h1>
+  <% @reservations.each do |reservation| %>
+    <p>
+      <%= reservation.house.name %>
+    </p>
+      <%= reservation.guests_number %>
+      <%= reservation.start_booked_at %>
+      <%= reservation.end_booked_at %>
+  <% end %>
+
+
+
+

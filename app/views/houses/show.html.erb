@@ -1,1 +1,28 @@
-show.html.erb
+
+<div class="banner-house" style="background: url('<%= @house.house_picture %>') no-repeat center; background-size: cover;"></div>
+
+<div class="house-identity">
+  <div class="house-name">
+    <h3><%= @house.name %></h3>
+  </div>
+
+  <div>
+    <%= @house.description %>
+  </div>
+
+  <div>
+    <%= "ADDRESS | #{@house.address}" %>
+  </div>
+
+  <div>
+    <%= "PRICE PER NIGHT | #{@house.price_per_night} $" %>
+  </div>
+</div>
+
+  <div>
+    <div class="book">
+      <p class="btn btn-danger">
+        <%= link_to "BOOK NOW", new_house_reservation_path(@house)%>
+      </p>
+    </div>
+  </div>
