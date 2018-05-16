@@ -1,0 +1,7 @@
+<h2>New reservation</h2>
+  <%= simple_form_for [@house, @reservation] do |f| %>
+    <%= f.input :guests_number, placeholder: "Number of guest" %>
+    <%= f.input :start_booked_at, placeholder: "Booking date" %>
+    <%= f.input :end_booked_at, placeholder: "Leaving date" %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>

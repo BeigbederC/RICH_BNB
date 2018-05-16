@@ -1,19 +1,21 @@
 class ReservationsController < ApplicationController
   def index
-    @house.
+    @house = House.find(params[:house_id])
+    @reservations = @house.reservations
   end
 
   def new
-    @houses = House.find(param[:house_id])
-    @reservations = Reservation.new
+    @house = House.find(params[:house_id])
+    @reservation = Reservation.new
   end
 
   def create
-    @reservation = Reservation.new(reservations_params)
+    @house = House.find(params[:house_id])
+    @reservation = Reservation.new(reservation_params)
     @reservation.house = House.find(params[:house_id])
-    @reservation.save
+    @reservation.user = current_user
     if @reservation.save
-      redirect_to house_reservation_path(House.find(params[:house_id]))
+      redirect_to house_reservations_path(@house)
     else
       render :new
     end
@@ -25,8 +27,9 @@ class ReservationsController < ApplicationController
 
   private
 
-  def reservations_params
-    params.require(:review).permit(:content, :rating)
+  def reservation_params
+    params.require(:reservation).permit(:guests_number, :start_booked_at, :end_booked_at)
   end
 end
+
 
