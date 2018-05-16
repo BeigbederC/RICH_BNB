@@ -1,0 +1,46 @@
+.house-identity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10px;
+
+  .house-name {
+    h3 {
+      margin: 0px;
+    }
+  }
+}
+
+
+
+.btn .btn-danger {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.book {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+}
+
+
+
+.banner-house {
+  width: 100%;
+  height: 350px;
+}

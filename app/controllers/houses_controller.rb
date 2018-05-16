@@ -34,3 +34,4 @@ class HousesController < ApplicationController
     params.require(:house).permit(:name)
   end
 end
+
