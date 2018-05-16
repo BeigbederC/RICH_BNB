@@ -3,34 +3,24 @@
   border: 1px solid #EFF0F4;
   background-color: white;
   margin-top: 50px;
-
-   p {
-      color: black;
-      padding-left: 20px;
-    }
-
+  p {
+    color: black;
+    padding-left: 20px;
+  }
   .card-picture {
+    padding: 15px;
+    height: 250px;
+    width: 100%;
+    border: none;
     h2 {
       color: white;
       border: none;
       padding-left: 20px;
 
     }
-
-    padding: 15px;
-    height: 250px;
-    width: 100%;
-    border: none;
   }
-
-  .pin-right  {
-    a {
-      margin-left: auto;
-      margin-right: 5px;
-      border: none;
-      padding-left: 20px;
-
+  .margin-right {
+    margin-right: 15px;
   }
-}
 }
 
