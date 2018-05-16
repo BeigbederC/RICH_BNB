@@ -1,6 +1,4 @@
 <h1>My list of reservations</h1>
-<%= link_to 'new', new_house_reservation_path(@house) %>
-
   <% @reservations.each do |reservation| %>
     <p>
       <%= reservation.house.name %>
