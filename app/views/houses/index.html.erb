@@ -1,11 +1,36 @@
-index.html.erb
-<%= link_to "Add a house", new_house_path, class: "btn btn-primary" %>
 
-<% @houses.each do |house| %>
-  <%= link_to house.name, house_path(house) %>
-  <%= image_tag house.house_picture %>
+<div class="add-house"> <%= link_to "Add a house", new_house_path, class: "btn btn-primary" %></div>
 
-  <%= link_to "Delete", house_path(house),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-<% end %>
+<div class="container">
+  <div class="row">
+
+    <% @houses.each do |house| %>
+      <div class="col-md-6">
+        <%= link_to house_path(house) do %>
+          <div class="houses-card" >
+            <div class="card-picture" style="background: url(<%= house.house_picture %>) no-repeat center; background-size: cover;">
+              <h2 class="w3-border-0" ><%= house.name %></h2>
+            </div>
+            <div class="card-content" class="w3-border-0">
+              <div class="description" class="w3-border-0">
+                <p class="houses-card" class="w3-border-0"><%= house.description %></p>
+              </div>
+              <div class="infos-house">
+                <p><%= house.address %></p>
+                <p><%= house.price_per_night %></p>
+              </div>
+              <div class="delete">
+        <% end %>
+                <h4 class="w3-border-0" class="houses-card" class="pin-right"><%= link_to "Delete", house_path(house),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
