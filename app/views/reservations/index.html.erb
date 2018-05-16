@@ -1,13 +1,34 @@
-<h1>My list of reservations</h1>
+<div class="container">
+<h3>LAST RESERVATIONS</h3>
+
   <% @reservations.each do |reservation| %>
-    <p>
-      <%= reservation.house.name %>
-    </p>
-      <%= reservation.guests_number %>
-      <%= reservation.start_booked_at %>
-      <%= reservation.end_booked_at %>
+    <div>
+      <h5><%= "RESERVATION DETAILS:" %></h5>
+      <h6><%= "RESERVATION DONE ON #{reservation.created_at}" %></h6>
+    </div>
+
+    <div>
+      <%= "HOUSE | #{@house.name}" %>
+    </div>
+
+    <div>
+      <%= "GUESTS NUMBER | #{reservation.guests_number} people" %>
+    </div>
+
+    <div>
+      <%= "DATE OF ARRIVING | #{reservation.start_booked_at}" %>
+    </div>
+
+    <div>
+      <%= "DATE OF LEAVING | #{reservation.end_booked_at}" %>
+    </div>
+
+    <div>
+      <%= "PRICE | #{reservation.price}" %>
+    </div>
+
+    <hr>
   <% end %>
 
-
-
-
+<%= link_to 'back home', houses_path(@house) %>
+</div>
