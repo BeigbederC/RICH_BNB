@@ -1,34 +1,32 @@
 <%= link_to "Add a house", new_house_path, class: "btn btn-primary" %>
 
+
 <div class="container">
-  <div class="row">
-
-    <% @houses.each do |house| %>
-      <div class="col-md-6">
-        <%= link_to house_path(house) do %>
-          <div class="houses-card">
-            <div class="card-picture" style="background: url(<%= house.house_picture %>) no-repeat center; background-size: cover;">
-              <h2><%= house.name %></h2>
-            </div>
-            <div class="card-content">
-              <div class="description">
-                <p><%= house.description %></p>
+  <div class="card-container">
+    <div class="row">
+      <% @houses.each do |house| %>
+        <div class="col-xs-12 col-md-6">
+          <div class="house-card">
+            <div class="card__image" style="background: url(<%= house.house_picture %>) no-repeat center; background-size: cover;"></div>
+            <div class="card__content">
+              <div class="card__title">
+                <%= house.name %>
               </div>
-              <div class="infos-house">
-                <p><%= house.address %></p>
-                <p><%= house.price_per_night %></p>
-              </div>
-              <div class="delete margin-right">
-        <% end %>
-                <h4 class="text-right">
-                  <%= link_to "Delete", house_path(house), method: :delete, data: {confirm: "Are you sure?" }%>
-
-                </h4>
+              <p class="card__text">
+                <%= house.description %>
+              </p>
+              <p class="card__text">
+                <%= house.address %>
+              </p>
+              <p class="card__price">
+                <%= "#{house.price_per_night} €" %>
+              </p>
+              <%= link_to "Pick me" ,house_path(house), class: "house-btn btn--block card__btn text-center" %>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
