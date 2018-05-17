@@ -28,6 +28,13 @@
         <%= "PRICE | #{reservation.price}" %>
       </div>
 
+      <div>
+          <h4>
+            <%= link_to "Delete", reservation_path(reservation), method: :delete, data: {confirm: "Are you sure?" }%>
+
+          </h4>
+      </div>
+
       <hr>
     </div>
   <% end %>
