@@ -1,28 +1,34 @@
 
-<div class="banner-house" style="background: url('<%= @house.house_picture %>') no-repeat center; background-size: cover;"></div>
 
-<div class="house-identity">
-  <div class="house-name">
+<div class="show-header" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 50%), url('<%= @house.house_picture %>');">
+  <div class="header-content">
     <h3><%= @house.name %></h3>
-  </div>
-
-  <div>
-    <%= @house.description %>
-  </div>
-
-  <div>
-    <%= "ADDRESS | #{@house.address}" %>
-  </div>
-
-  <div>
-    <%= "PRICE PER NIGHT | #{@house.price_per_night} $" %>
+    <%= link_to "BOOK NOW", new_house_reservation_path(@house), class: "btn btn-success btn-lg" %>
   </div>
 </div>
 
-  <div>
-    <div class="book">
-      <p class="btn btn-danger">
-        <%= link_to "BOOK NOW", new_house_reservation_path(@house)%>
-      </p>
-    </div>
+
+
+<div class="container">
+
+
+  <div class="show-section">
+    <div class="section-title">DESCRIPTION |</div>
+    <div class="section-content"><%= "#{@house.description}" %></div>
   </div>
+
+  <div class="show-section2">
+    <div class="section-title">ADDRESS |</div>
+    <div class="section-content"><%= "#{@house.address}" %></div>
+  </div>
+
+  <div class="show-section3">
+    <div class="section-title">PRICE |</div>
+    <div class="section-content"><%= "#{@house.price_per_night}$/per night" %></div>
+  </div>
+
+
+</div>
+
+
+
