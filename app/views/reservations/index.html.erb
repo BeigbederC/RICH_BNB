@@ -2,32 +2,34 @@
 <h3>LAST RESERVATIONS</h3>
 
   <% @reservations.each do |reservation| %>
-    <div>
+    <div class="reservations-index-inverted">
       <h5><%= "RESERVATION DETAILS:" %></h5>
       <h6><%= "RESERVATION DONE ON #{reservation.created_at}" %></h6>
-    </div>
+      <br>
 
-    <div>
-      <%= "HOUSE | #{@house.name}" %>
-    </div>
 
-    <div>
-      <%= "GUESTS NUMBER | #{reservation.guests_number} people" %>
-    </div>
+      <div>
+        <%= "HOUSE | #{reservation.house.name}" %>
+      </div>
 
-    <div>
-      <%= "DATE OF ARRIVING | #{reservation.start_booked_at}" %>
-    </div>
+      <div>
+        <%= "GUESTS NUMBER | #{reservation.guests_number} people" %>
+      </div>
 
-    <div>
-      <%= "DATE OF LEAVING | #{reservation.end_booked_at}" %>
-    </div>
+      <div>
+        <%= "DATE OF ARRIVING | #{reservation.start_booked_at}" %>
+      </div>
 
-    <div>
-      <%= "PRICE | #{reservation.price}" %>
-    </div>
+      <div>
+        <%= "DATE OF LEAVING | #{reservation.end_booked_at}" %>
+      </div>
 
-    <hr>
+      <div>
+        <%= "PRICE | #{reservation.price}" %>
+      </div>
+
+      <hr>
+    </div>
   <% end %>
 
 <%= link_to 'back home', houses_path(@house) %>
