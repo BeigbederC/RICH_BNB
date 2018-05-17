@@ -1,0 +1,16 @@
+.form-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  background-color: #04080F;
+}
+.reservation-form {
+  border: 2px solid #CFDBD5;
+  width: 400px;
+  background-color: #B2AA8E;
+  padding: 24px;
+}
+.form-btn {
+  background-color: #ADF7B6;
+}
