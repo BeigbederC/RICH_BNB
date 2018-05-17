@@ -3,9 +3,11 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 70px);
-  background-color: #04080F;
+  background-color: #F4F4F4;
 }
 .reservation-form {
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #CFDBD5;
   border: 2px solid #CFDBD5;
   width: 400px;
   background-color: #B2AA8E;
