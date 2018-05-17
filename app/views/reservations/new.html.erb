@@ -1,9 +1,11 @@
-<div class="container">
+<div class="form-layout">
+  <div class="reservation-form">
   <h2>New reservation</h2>
     <%= simple_form_for [@house, @reservation] do |f| %>
       <%= f.input :guests_number, placeholder: "Number of guest" %>
       <%= f.input :start_booked_at, placeholder: "Booking date", html5: true %>
       <%= f.input :end_booked_at, placeholder: "Leaving date", html5: true %>
-      <%= f.button :submit, class: "btn btn-primary" %>
+      <%= f.button :submit, class: "form-btn btn-block" %>
     <% end %>
+    </div>
 </div>
