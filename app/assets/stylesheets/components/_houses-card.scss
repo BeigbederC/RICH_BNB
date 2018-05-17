@@ -6,10 +6,10 @@ $gray-lighter:              #ececec;
 $gray-lightest:             lighten($gray-lighter,4%);
 
 .house-btn {
-  background-color: #ADF7B6;
+  background-color: #69A2B0;
   border: 1px solid $gray-light;
   //border-radius: 1rem;
-  color: $gray-dark;
+  color: $gray-light;
   padding: 0.5rem;
   text-transform: lowercase;
 }
