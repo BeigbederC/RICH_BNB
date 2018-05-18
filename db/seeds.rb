@@ -21,7 +21,7 @@ photos.each do |photo|
    name:    Faker::Hobbit.location,
    description: Faker::StarWars.wookiee_sentence,
    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
-   avaibility: true,
+   availability: true,
    price_per_night: (300..800).to_a.sample,
    house_picture: photo
  )
