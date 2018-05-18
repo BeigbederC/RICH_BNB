@@ -3,6 +3,7 @@ class HousesController < ApplicationController
 
   def index
     @houses = House.all
+
   end
 
   def show
@@ -10,6 +11,7 @@ class HousesController < ApplicationController
   end
 
   def new
+    @user = current_user
     @house = House.new
   end
 
@@ -19,8 +21,9 @@ class HousesController < ApplicationController
 
   def create
     @house = House.new(house_params)
+    @house.user = current_user
       if @house.save
-        redirect_to new_house_path
+        redirect_to house_path(@house)
       else
         render :new
       end
@@ -39,7 +42,7 @@ class HousesController < ApplicationController
 
   private
   def house_params
-    params.require(:house).permit(:name, :description, :house_picture, :price_per_night, :address)
+    params.require(:house).permit(:user, :name, :description, :house_picture, :price_per_night, :address, :availability)
   end
 end
 
