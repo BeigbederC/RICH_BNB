@@ -1,8 +1,12 @@
-new.html.erb
 
 <h2>New house</h2>
   <%= simple_form_for(@house) do |f| %>
-    <%= f.input :name, placeholder: "house" %>
+    <%= f.input :name, placeholder: "your house's name" %>
+    <%= f.input :address, placeholder: "your house's adress" %>
+    <%= f.input :description, placeholder: "describe your house" %>
+    <%= f.input :price_per_night, as: :integer, placeholder: "the price per night in $" %>
+    <%= f.input :house_picture, placeholder: "copy your JPG image URL here" %>
+
     <%= f.button :submit, class: "btn btn-primary"  %>
   <% end %>
 

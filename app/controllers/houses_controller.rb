@@ -14,6 +14,7 @@ class HousesController < ApplicationController
   end
 
   def edit
+    @house = House.find(params[:id])
   end
 
   def create
@@ -26,14 +27,19 @@ class HousesController < ApplicationController
   end
 
   def update
+    @house = House.find(params[:id])
+    @house.update(params[:house])
   end
 
   def destroy
+    @house = House.find(params[:id])
+    @house.destroy
+    redirect_to houses_path
   end
 
   private
   def house_params
-    params.require(:house).permit(:name)
+    params.require(:house).permit(:name, :description, :house_picture, :price_per_night, :address)
   end
 end
 
