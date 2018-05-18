@@ -22,7 +22,7 @@ photos.each do |photo|
    description: Faker::StarWars.wookiee_sentence,
    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
    avaibility: true,
-   price_per_night: (300..800).to_a.sample,
+   price_per_night: (3000..8000).to_a.sample,
    house_picture: photo
  )
  house.save!

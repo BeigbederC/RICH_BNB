@@ -10,8 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Mes reservations", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Louer une maison", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Mes reservations", reservations_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Voir les RichBnb houses", houses_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Mettre en location", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
