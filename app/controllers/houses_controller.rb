@@ -11,13 +11,9 @@ class HousesController < ApplicationController
   end
 
   def new
-    @user = current_user
     @house = House.new
   end
 
-  def edit
-    @house = House.find(params[:id])
-  end
 
   def create
     @house = House.new(house_params)
@@ -29,9 +25,14 @@ class HousesController < ApplicationController
       end
   end
 
+  def edit
+    @house = House.find(params[:id])
+
+  end
+
   def update
     @house = House.find(params[:id])
-    @house.update(params[:house])
+    @house.update(house_params)
   end
 
   def destroy

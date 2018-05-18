@@ -22,10 +22,15 @@
       <div class="section-content"><%= "#{@house.address}" %></div>
     </div>
 
+  <div class="show-section">
+    <div class="section-title">DESCRIPTION |</div>
+    <div class="section-content"><%= "#{@house.description}" %></div>
+
     <div class="show-section3">
       <div class="section-title">PRICE |</div>
       <div class="section-content"><%= "#{@house.price_per_night}$/per night" %></div>
     </div>
+
   </div>
 
 
@@ -36,6 +41,10 @@
   </div>
 
 
+<div class="container">
+ <%= link_to "Delete this house", house_path(@house), method: :delete, class: "btn btn_danger" %>
+ <%= link_to "Edit this house", edit_house_path(@house), class: "btn btn_danger" %>
+</div>
 
 
 
