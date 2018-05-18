@@ -15,9 +15,6 @@ class HousesController < ApplicationController
     @house = House.new
   end
 
-  def edit
-    @house = House.find(params[:id])
-  end
 
   def create
     @house = House.new(house_params)
@@ -27,6 +24,10 @@ class HousesController < ApplicationController
       else
         render :new
       end
+  end
+
+  def edit
+    @house = House.find(params[:id])
   end
 
   def update

@@ -20,6 +20,9 @@
 
 
 <div class="row">
+<!--  -->
+   <%= link_to "This house belongs to you - You can click here to delete it" , @house.destroy , class: "house-btn btn--block card__btn text-center" %>
+
   <div class="show-section">
     <div class="section-title">DESCRIPTION |</div>
     <div class="section-content"><%= "#{@house.description}" %></div>

@@ -21,6 +21,9 @@
                 <%= "#{house.price_per_night} €" %>
               </p>
               <%= link_to "Book this house" ,house_path(house), class: "house-btn btn--block card__btn text-center" %>
+              <% if house.user == current_user %>
+                <%= link_to "Delete this house", house_path(house), method: :delete, class: "btn btn_danger" %>
+              <% end %>
             </div>
           </div>
         </div>
