@@ -1,15 +1,27 @@
-<div class="form-layout">
+
+
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pulselive.co.ke/img/incoming/origs7107683/6160489386-w980-h640/luxury-home-41.jpg');">
+
   <div class="reservation-form">
     <%= simple_form_for(@house) do |f| %>
-      <%= f.input :name, placeholder: "your house's name" %>
-      <%= f.input :address, placeholder: "your house's adress" %>
-      <%= f.input :description, placeholder: "describe your house" %>
-      <%= f.input :price_per_night, as: :integer, placeholder: "the price per night in $" %>
-      <%= f.input :house_picture, as: :string, placeholder: "copy your JPG image URL here" %>
-      <%= f.input :availability, as: :boolean, checked_value: true, unchecked_value: false %>
+      <h2>Add a House</h5>
+      <h5><%= f.input :name, placeholder: "your house's name" %></h5>
+      <h5><%= f.input :address, placeholder: "your house's adress" %></h5>
+      <h5><%= f.input :description, placeholder: "describe your house" %></h5>
+      <h5><%= f.input :price_per_night, as: :integer, placeholder: "the price per night in $" %></h5>
+      <h5><%= f.input :house_picture, as: :string, placeholder: "copy your JPG image URL here" %></h5>
+      <h5><%= f.input :availability, as: :boolean, checked_value: true, unchecked_value: false %></h5>
+
+
+
+
+
+
 
       <%= f.button :submit, class: "btn btn-primary"  %>
     <% end %>
 
   </div>
+
 </div>
