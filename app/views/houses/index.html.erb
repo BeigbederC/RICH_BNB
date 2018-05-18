@@ -6,7 +6,10 @@
       <% @houses.each do |house| %>
         <div class="col-xs-12 col-md-6">
           <div class="house-card">
+            <%= link_to house_path(house) do %>
             <div class="card__image" style="background: url(<%= house.house_picture %>) no-repeat center; background-size: cover;"></div>
+            <% end %>
+
             <div class="card__content">
               <div class="card__title">
                 <%= house.name %>
