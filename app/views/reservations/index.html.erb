@@ -1,43 +1,65 @@
-<div class="container">
-<h3>LAST RESERVATIONS</h3>
-
-  <% @reservations.each do |reservation| %>
-    <div class="reservations-index-inverted">
-      <h5><%= "RESERVATION DETAILS:" %></h5>
-      <h6><%= "RESERVATION DONE ON #{reservation.created_at}" %></h6>
-      <br>
-
-
-      <div>
-        <%= "HOUSE | #{reservation.house.name}" %>
-      </div>
-
-      <div>
-        <%= "GUESTS NUMBER | #{reservation.guests_number} people" %>
-      </div>
-
-      <div>
-        <%= "DATE OF ARRIVING | #{reservation.start_booked_at}" %>
-      </div>
-
-      <div>
-        <%= "DATE OF LEAVING | #{reservation.end_booked_at}" %>
-      </div>
-
-      <div>
-        <%= "PRICE | #{reservation.price}" %>
-      </div>
-
-      <div>
-          <h4>
-            <%= link_to "Delete", reservation_path(reservation), method: :delete, data: {confirm: "Are you sure?" }%>
-
-          </h4>
-      </div>
-
-      <hr>
+<div class="blocks-reservations">
+  <div class="container">
+    <div>
+    <h3>LAST RESERVATIONS</h3>
     </div>
-  <% end %>
+    <hr>
 
-<%= link_to 'back home', houses_path(@house) %>
+    <div class="row">
+      <% @reservations.each do |reservation| %>
+        <div class="col-xs-12">
+          <div class="reservations-index-inverted">
+            <div class="card__image" style="background: url(<%= reservation.house.house_picture %>) no-repeat center; background-size: cover;">
+
+            </div>
+
+            <div class="card__details">
+              <h5><%= "RESERVATION DETAILS:" %></h5>
+              <h6><%= "RESERVATION DONE ON #{reservation.created_at}" %></h6>
+              <br>
+            </div>
+
+            <div class="card__text">
+              <div>
+                <%= "HOUSE | #{reservation.house.name}" %>
+              </div>
+
+              <div>
+                <%= "GUESTS NUMBER | #{reservation.guests_number} people" %>
+              </div>
+
+              <div>
+                <%= "DATE OF ARRIVING | #{reservation.start_booked_at}" %>
+              </div>
+
+              <div>
+                <%= "DATE OF LEAVING | #{reservation.end_booked_at}" %>
+              </div>
+            </div>
+
+            <div class="card__price">
+              <div>
+                <%= "PRICE | #{reservation.price} €" %>
+              </div>
+            </div>
+
+              <div class="btn--resa-block">
+                <h4>
+                  <%= link_to "Delete", reservation_path(reservation), method: :delete, data: {confirm: "Are you sure?" }, class: "resa-btn btn--resa-block" %>
+
+                </h4>
+              </div>
+              <hr>
+
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to 'back home', houses_path(@house) %>
+  </div>
+
+  <div class="wrapper-map">
+    <div id="map"></div>
+  </div>
+
 </div>
