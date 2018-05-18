@@ -1,0 +1,15 @@
+<div class="form-layout">
+  <div class="reservation-form">
+    <%= simple_form_for(@house) do |f| %>
+      <%= f.input :name, placeholder: "your house's name" %>
+      <%= f.input :address, placeholder: "your house's adress" %>
+      <%= f.input :description, placeholder: "describe your house" %>
+      <%= f.input :price_per_night, as: :integer, placeholder: "the price per night in $" %>
+      <%= f.input :house_picture, as: :string, placeholder: "copy your JPG image URL here" %>
+      <%= f.input :availability, as: :boolean, checked_value: true, unchecked_value: false %>
+
+      <%= f.button :submit, class: "btn btn-primary"  %>
+    <% end %>
+
+  </div>
+</div>

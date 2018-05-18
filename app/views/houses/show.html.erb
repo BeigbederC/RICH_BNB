@@ -20,8 +20,9 @@
 
 
 <div class="row">
-<!--  -->
-   <%= link_to "This house belongs to you - You can click here to delete it" , @house.destroy , class: "house-btn btn--block card__btn text-center" %>
+
+
+
 
   <div class="show-section">
     <div class="section-title">DESCRIPTION |</div>
@@ -39,6 +40,10 @@
   </div>
 </div>
 
+<div class="container">
+ <%= link_to "Delete this house", house_path(@house), method: :delete, class: "btn btn_danger" %>
+ <%= link_to "Edit this house", edit_house_path(@house), class: "btn btn_danger" %>
+</div>
 
 
 

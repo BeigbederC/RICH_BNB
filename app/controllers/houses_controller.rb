@@ -11,7 +11,6 @@ class HousesController < ApplicationController
   end
 
   def new
-    @user = current_user
     @house = House.new
   end
 
@@ -28,11 +27,12 @@ class HousesController < ApplicationController
 
   def edit
     @house = House.find(params[:id])
+
   end
 
   def update
     @house = House.find(params[:id])
-    @house.update(params[:house])
+    @house.update(house_params)
   end
 
   def destroy
