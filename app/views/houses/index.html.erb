@@ -6,7 +6,10 @@
       <% @houses.each do |house| %>
         <div class="col-xs-12 col-md-6">
           <div class="house-card">
+            <%= link_to house_path(house) do %>
             <div class="card__image" style="background: url(<%= house.house_picture %>) no-repeat center; background-size: cover;"></div>
+            <% end %>
+
             <div class="card__content">
               <div class="card__title">
                 <%= house.name %>
@@ -20,10 +23,7 @@
               <p class="card__price">
                 <%= "#{house.price_per_night} €" %>
               </p>
-              <%= link_to "Book this house" ,house_path(house), class: "house-btn btn--block card__btn text-center" %>
-              <% if house.user == current_user %>
-                <%= link_to "Delete this house", house_path(house), method: :delete, class: "btn btn_danger" %>
-              <% end %>
+              <%= link_to "Book this house" ,house_path(house), class: "btn btn-success btn-lg" %>
             </div>
           </div>
         </div>
