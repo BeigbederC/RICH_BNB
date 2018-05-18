@@ -1,8 +1,16 @@
 class HousesController < ApplicationController
-    skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @houses = House.all
+    @houses = House.where.not(latitude: nil, longitude: nil)
+
+    @markers = @houses.map do |house|
+      {
+        lat: house.latitude,
+        lng: house.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
@@ -36,4 +44,5 @@ class HousesController < ApplicationController
     params.require(:house).permit(:name)
   end
 end
+
 

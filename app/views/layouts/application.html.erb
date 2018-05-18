@@ -10,6 +10,9 @@
 
   </head>
   <body>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+
     <div class="notice"><%= notice %></div>
     <div class="alert"><%= alert %></div>
     <%= render 'shared/navbar' %>
